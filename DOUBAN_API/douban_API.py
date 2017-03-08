@@ -4,8 +4,8 @@ import urllib2
 
 doubanAPI = "https://api.douban.com/v2/book/search"
 q = "三生三世十里桃花"
-count = "1"
-url = doubanAPI+"?"+"q"+"="+q+"&"+"count"+"="+count
+count = 1
+url = '%s?q=%s&count=%d'%(doubanAPI,q,count)
 print url
 req = urllib2.Request(url)
 print req
