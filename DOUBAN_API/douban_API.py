@@ -3,7 +3,7 @@ import urllib
 import urllib2
 
 doubanAPI = "https://api.douban.com/v2/book/search"
-q = "三生三世十里桃花"
+q = raw_input('请输入查询书名')
 count = 1
 url = '%s?q=%s&count=%d'%(doubanAPI,q,count)
 print url
