@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import urllib2
 import json
+import Database.Database
 doubanAPI = "https://api.douban.com/v2/book/search"
-#q = raw_input('请输入查询书名')
-q = "用python写网络爬虫"
+q = raw_input('请输入查询书名\n')
 count = 1
 url = '%s?q=%s&count=%d'%(doubanAPI,q,count)
 req = urllib2.Request(url)
@@ -18,3 +18,4 @@ for type in dic_json['books'][0]['tags'] :
 type = type['name']
 for author in dic_json["books"][0]['author']:
     pass
+Database.Database.writeIntoDataBase(name,author,pubdate,type);
