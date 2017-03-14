@@ -1,2 +1,3 @@
 request
 MySQLdb https://pypi.python.org/pypi/MySQL-python/
+pip install demjson

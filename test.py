@@ -1,0 +1,9 @@
+# encoding:utf-8
+import json
+str='''
+{"count":1,"start":0,"total":31,"books":[{"rating":{"max":10,"numRaters":61115,"average":"8.1","min":0},"subtitle":"","author":["唐七公子"],"pubdate":"2009-1","tags":[{"count":13268,"name":"唐七公子","title":"唐七公子"},{"count":7574,"name":"言情","title":"言情"},{"count":6395,"name":"三生三世","title":"三生三世"},{"count":5412,"name":"小说","title":"小说"},{"count":4534,"name":"玄幻","title":"玄幻"},{"count":4112,"name":"十里桃花","title":"十里桃花"},{"count":3434,"name":"爱情","title":"爱情"},{"count":2210,"name":"网络小说","title":"网络小说"}],"origin_title":"","image":"https://img1.doubanio.com\/mpic\/s3551687.jpg","binding":"平装16开","translator":[],"catalog":"前传（一）n前传 （二）n楔子n第一章n第二章n第三章n第四章n第五章n第六章n第七章n第八章n第九章n第十章n第十一章n第十二章n第十三章n夜华番外（上篇）n第十四章n第十五章n第十六章n第十七章n第十八章n第十九章n第二十章n第二十一章n第二十二章n夜华番外（下篇）n白真番外n夜白相性十四问n恶搞番外之团子的大名","pages":"288","images":{"small":"https://img1.doubanio.com\/spic\/s3551687.jpg","large":"https://img1.doubanio.com\/lpic\/s3551687.jpg","medium":"https://img1.doubanio.com\/mpic\/s3551687.jpg"},"alt":"https:\/\/book.douban.com\/subject\/3426869\/","id":"3426869","publisher":"沈阳出版社","isbn10":"7544138003","isbn13":"9787544138000","title":"三生三世 十里桃花","url":"https:\/\/api.douban.com\/v2\/book\/3426869","alt_title":"","author_intro":"唐七公子：中学时看王尔德的书，里边有句话一直记着。他说，一个人想恢复青春，只消重演过去干的蠢事就够了。倒并不是觉得他说得好，不知道怎么就记到现在了。如今，我每天都在干蠢事，一边青春着，一边觉得继续这么青春下去实在不妙。","summary":"前世今生系列之一。n“你若敢死，我立刻便去找折颜要药水，把你忘得干干净净”n他的身子一颤，半晌，扯出一个笑来，他说 ：“那样也好。”n他在这世上，留给我的最后一句话是，那样也好。n你有没有爱过一个人？你有没有恨过一个人？n三百年前，诛仙台上的她绝然转身跳下，让铜镜那边的他亲眼见她隔世永别。n这世间再没她这样一个凡尘女子了，九重天上的太子夜华，不过是她做的一场梦，带着无尽苦楚和微微桃花色。n可是美梦终究会醒，支离破碎后，她端起了孟婆汤，永远忘记这一段尘缘。n三百年后，东海龙宫中，她与他不期而遇，再生再世，再次面对这个负心人时，她淡然如风，却不知他为何用冰冷的手一次次摩挲过她的双眼。n三生三世，她和他，是否注定背负一段纠缠的姻缘？n三生三世，她和他，是否终能互许一个生生世世的承诺？","series":{"id":"6194","title":"彩虹堂·前世今生系列"},"price":"26.80"}]}
+'''
+obj=json.loads(str)
+
+for tag in obj['books'][0]['tags']:
+    print tag
