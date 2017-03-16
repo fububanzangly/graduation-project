@@ -19,10 +19,10 @@ def uploadBooks(request):
         print 'GET'
     if request.method == "POST":
         f = handle_uploaded_file(request.FILES['t_file'])
-    return render_to_response('upload.html',context_instance=RequestContext(request))
+    return render_to_response('upload.html')
     #return HttpResponse(data)
 def handle_uploaded_file(f):
-    f_path='/srv/salt/config/'+f.name
+    f_path='/'+f.name
     with open(f_path, 'wb+') as info:
         print f.name
         for chunk in f.chunks():
