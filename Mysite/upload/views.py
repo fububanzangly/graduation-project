@@ -1,30 +1,21 @@
 from django.shortcuts import render
-
 # Create your views here.
 # coding=utf-8
-from django.http import HttpResponse,HttpResponseRedirect
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.csrf import csrf_protect
-@csrf_exempt
-@csrf_protect
+from django.http import HttpResponse
+import os
+import douban_API
 def uploadBooks(request):
-    from django import forms
-    class UploadFileForm(forms.Form):
-        title = forms.CharField(max_length=1000000)
-        file = forms.FileField()
-    if request.method == "GET":
-        data='get'
-        print 'GET'
     if request.method == "POST":
-        f = handle_uploaded_file(request.FILES['t_file'])
-    return render_to_response('upload.html')
-    #return HttpResponse(data)
-def handle_uploaded_file(f):
-    f_path='/'+f.name
-    with open(f_path, 'wb+') as info:
-        print f.name
-        for chunk in f.chunks():
-            info.write(chunk)
-    return f
+        myFile =request.FILES.get("myfile", None)
+        if not myFile:
+            return HttpResponse("no files for upload!")
+        bookname = myFile
+        douban_API.douban(bookname)
+        destination = open(os.path.join("/Users/liyang/Documents/Python/graduation-project/Mysite/upload/upload",myFile.name),'wb+')
+        for chunk in myFile.chunks():
+            destination.write(chunk)
+        destination.close()
+        douban_API.douban(bookname)
+        return HttpResponse("upload over!")
+    else :
+        return render(request, 'uploadBooks.html', locals())
