@@ -20,5 +20,7 @@ from django.conf.urls import include
 urlpatterns = [
     url(r'^uploads/',include('upload.urls')),
     url(r'^account/',include('account.urls')),
+    url(r'^github/',include('github.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^', include("homepage.urls")),
 ]
