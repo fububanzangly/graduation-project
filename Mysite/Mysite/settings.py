@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account',
     'upload',
     'bookinfo',
     'github',
-    'homepage'
+    'homepage',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +128,35 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
+AUTH_USER_MODEL = 'users.User'
+
+USERS_REGISTRATION_OPEN = True
+
+USERS_VERIFY_EMAIL = True
+
+USERS_AUTO_LOGIN_ON_ACTIVATION = True
+
+USERS_EMAIL_CONFIRMATION_TIMEOUT_DAYS = 3
+
+# Specifies minimum length for passwords:
+USERS_PASSWORD_MIN_LENGTH = 5
+
+# Specifies maximum length for passwords:
+USERS_PASSWORD_MAX_LENGTH = None
+
+# the complexity validator, checks the password strength
+USERS_CHECK_PASSWORD_COMPLEXITY = True
+
+USERS_SPAM_PROTECTION = False  # important!
+
+#  ---------------------------------------------------------
+#  Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '877140717@qq.com'
+EMAIL_HOST_PASSWORD = 'fvfaizszjfcsbfeh'
+DEFAULT_FROM_EMAIL = '877140717@qq.com'
+#  ---------------------------------------------------------
