@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from bookinfo import models
 # Create your views here.
 # coding=utf-8
 from django.http import HttpResponse
 import os
 import douban_API
+
 def uploadBooks(request):
     if request.method == "POST":
         myFile =request.FILES.get("myfile", None)
@@ -19,3 +21,6 @@ def uploadBooks(request):
         return HttpResponse("upload over!")
     else :
         return render(request, 'uploadBooks.html', locals())
+
+def writeIntoDatabase(name,author,pubdate,type,ISBN):
+    models.bookinfo.objects.create(name=name,author=author,pubdate=pubdate,type=type,ISBN=ISBN)

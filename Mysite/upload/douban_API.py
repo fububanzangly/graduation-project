@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import urllib2
-
+import views
 import Database
 
 
@@ -22,4 +22,6 @@ def douban(bookname):
     type = type['name']
     for author in dic_json["books"][0]['author']:
         pass
-    Database.writeIntoDataBase(name, author, pubdate, type);
+    ISBN = dic_json["books"][0]['isbn10']
+    return views.writeIntoDatabase(name,author,pubdate,type,ISBN)
+    #Database.writeIntoDataBase(name, author, pubdate, type);
