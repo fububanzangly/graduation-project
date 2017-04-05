@@ -2,9 +2,6 @@
 import json
 import urllib2
 import views
-import Database
-
-
 def douban(bookname):
     doubanAPI = "https://api.douban.com/v2/book/search"
     q = bookname
@@ -24,4 +21,3 @@ def douban(bookname):
         pass
     ISBN = dic_json["books"][0]['isbn10']
     return views.writeIntoDatabase(name,author,pubdate,type,ISBN)
-    #Database.writeIntoDataBase(name, author, pubdate, type);

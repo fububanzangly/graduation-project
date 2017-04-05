@@ -5,7 +5,6 @@ from bookinfo import models
 from django.http import HttpResponse
 import os
 import douban_API
-
 def uploadBooks(request):
     if request.method == "POST":
         myFile =request.FILES.get("myfile", None)
@@ -17,10 +16,8 @@ def uploadBooks(request):
         for chunk in myFile.chunks():
             destination.write(chunk)
         destination.close()
-        douban_API.douban(bookname)
         return HttpResponse("upload over!")
     else :
         return render(request, 'uploadBooks.html', locals())
-
 def writeIntoDatabase(name,author,pubdate,type,ISBN):
     models.bookinfo.objects.create(name=name,author=author,pubdate=pubdate,type=type,ISBN=ISBN)
