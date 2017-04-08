@@ -41,12 +41,15 @@ INSTALLED_APPS = [
     'bookinfo',
     'github',
     'homepage',
-    'users'
+    'users',
+    'show',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -66,10 +69,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media'
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'Mysite.wsgi.application'
 
@@ -128,6 +133,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
+
 AUTH_USER_MODEL = 'users.User'
 
 USERS_REGISTRATION_OPEN = True
@@ -160,3 +166,4 @@ EMAIL_HOST_USER = '877140717@qq.com'
 EMAIL_HOST_PASSWORD = 'fvfaizszjfcsbfeh'
 DEFAULT_FROM_EMAIL = '877140717@qq.com'
 #  ---------------------------------------------------------
+CORS_ORIGIN_ALLOW_ALL = True

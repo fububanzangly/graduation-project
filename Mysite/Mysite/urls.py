@@ -17,8 +17,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
+from django.views.static import serve
+from django.conf import settings
 urlpatterns = [
-    url(r'^uploads/',include('upload.urls')),
+    url(r'^', include('show.urls')),
+    url(r'^',include('upload.urls')),
     url(r'^github/',include('github.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('users.urls')),

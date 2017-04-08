@@ -7,12 +7,13 @@ def douban(bookname):
     q = bookname
     count = 1
     url = '%s?q=%s&count=%d'%(doubanAPI,q,count)
+    path = '/Users/liyang/Documents/Python/graduation-project/Mysite/upload/upload/'
     req = urllib2.Request(url)
     res_data = urllib2.urlopen(req)
     res = res_data.read()
     dic_json = json.loads(res)
     dicbook = dic_json["books"]
-    pubdate =   str(dicbook[0]["pubdate"])
+    pubdate = str(dicbook[0]["pubdate"])
     name = q
     for type in dic_json['books'][0]['tags'] :
         pass
@@ -20,4 +21,5 @@ def douban(bookname):
     for author in dic_json["books"][0]['author']:
         pass
     ISBN = dic_json["books"][0]['isbn10']
-    return views.writeIntoDatabase(name,author,pubdate,type,ISBN)
+    realpath = str(path)+str(name)
+    return views.writeIntoDatabase(name,author,pubdate,type,ISBN,realpath)

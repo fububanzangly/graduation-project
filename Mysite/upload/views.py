@@ -12,12 +12,12 @@ def uploadBooks(request):
             return HttpResponse("no files for upload!")
         bookname = myFile
         douban_API.douban(bookname)
-        destination = open(os.path.join("/Users/liyang/Documents/Python/graduation-project/Mysite/upload/upload",myFile.name),'wb+')
+        destination = open(os.path.join('/Users/liyang/Documents/Python/graduation-project/Mysite/static/upload',myFile.name),'wb+')
         for chunk in myFile.chunks():
             destination.write(chunk)
         destination.close()
         return HttpResponse("upload over!")
     else :
         return render(request, 'uploadBooks.html', locals())
-def writeIntoDatabase(name,author,pubdate,type,ISBN):
-    models.bookinfo.objects.create(name=name,author=author,pubdate=pubdate,type=type,ISBN=ISBN)
+def writeIntoDatabase(name,author,pubdate,type,ISBN,realpath):
+    models.bookinfo.objects.create(name=name,author=author,pubdate=pubdate,type=type,ISBN=ISBN,path=realpath)
