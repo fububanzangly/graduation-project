@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from bookinfo import models
+import qiniu
 # Create your views here.
 # coding=utf-8
 from django.http import HttpResponse
 import os
 import douban_API
+from qiniu import Auth
 def uploadBooks(request):
     if request.method == "POST":
         myFile =request.FILES.get("myfile", None)
@@ -18,6 +20,8 @@ def uploadBooks(request):
         destination.close()
         return HttpResponse("upload over!")
     else :
-        return render(request, 'uploadBooks.html', locals())
+        return render(request, 'upload.html', locals())
+
+
 def writeIntoDatabase(name,author,pubdate,type,ISBN,realpath):
     models.bookinfo.objects.create(name=name,author=author,pubdate=pubdate,type=type,ISBN=ISBN,path=realpath)

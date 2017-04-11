@@ -85,7 +85,7 @@
 			<div class="row clearfix">
 				<div class="col-md-4 column">
 					<ul>
-							{% for line in bookinfo %}
+							{% for line in bookinfo|slice:":10" %}
 						<li>
 							<a href="{{ line.path}}"> {{ line.name}}</a>
 						</li>
