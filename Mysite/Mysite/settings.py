@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'threadedcomments',
+    'django_comments',
+    'django.contrib.sites',
     'upload',
     'bookinfo',
     'github',
@@ -167,3 +170,8 @@ EMAIL_HOST_PASSWORD = 'fvfaizszjfcsbfeh'
 DEFAULT_FROM_EMAIL = '877140717@qq.com'
 #  ---------------------------------------------------------
 CORS_ORIGIN_ALLOW_ALL = True
+#  ---------------------------------------------------------
+
+COMMENTS_APP = 'threadedcomments'
+SITE_ID = 1
+
