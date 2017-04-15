@@ -171,7 +171,3 @@ DEFAULT_FROM_EMAIL = '877140717@qq.com'
 #  ---------------------------------------------------------
 CORS_ORIGIN_ALLOW_ALL = True
 #  ---------------------------------------------------------
-
-COMMENTS_APP = 'threadedcomments'
-SITE_ID = 1
-
