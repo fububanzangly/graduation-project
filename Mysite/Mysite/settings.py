@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'homepage',
     'users',
     'show',
-    'corsheaders'
+    'corsheaders',
+    "qiniu"
 ]
 
 MIDDLEWARE = [
