@@ -1,9 +1,10 @@
-{% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>上传图书</title>
+    {% load static %}
     <link rel="stylesheet" href="/static/css/bootstrap.css">
     <link rel="stylesheet" href="/static/qiniu/css/main.css"/>
     <link rel="stylesheet" href="/static/qiniu/css/highlight.css"/>
@@ -27,7 +28,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <a class="navbar-brand" href="#">上传图书</a>
         </div>
+
       </div>
     </nav>
 
@@ -36,6 +39,7 @@
             <li role="presentation" class="active">
                 <a href="#demo" id="demo-tab" role="tab" data-toggle="tab" aria-controls="demo" aria-expanded="true">示例</a>
             </li>
+
             <li role="presentation">
                 <a href="#log" id="log-tab" role="tab" data-toggle="tab" aria-controls="log">日志</a>
             </li>
@@ -94,7 +98,6 @@
                 </div>
 
             </div>
-
 
             <div role="tabpanel" class="tab-pane fade" id="log" aria-labelledby="log-tab">
                 <pre id="qiniu-js-sdk-log"></pre>
@@ -198,8 +201,5 @@
         </div>
     </div>
 <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
 </body>
 </html>
