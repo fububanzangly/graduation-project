@@ -37,9 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'threadedcomments',
-    'django_comments',
-    'django.contrib.sites',
     'upload',
     'bookinfo',
     'github',
@@ -73,7 +70,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media'
             ],
         },
     },
@@ -170,5 +166,5 @@ EMAIL_HOST_USER = '877140717@qq.com'
 EMAIL_HOST_PASSWORD = 'fvfaizszjfcsbfeh'
 DEFAULT_FROM_EMAIL = '877140717@qq.com'
 #  ---------------------------------------------------------
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 #  ---------------------------------------------------------

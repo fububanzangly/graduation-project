@@ -681,17 +681,17 @@ function QiniuJsSDK() {
                 var ajax = that.createAjax();
                 ajax.open('GET', that.uptoken_url, false);
                 ajax.setRequestHeader("If-Modified-Since", "0");
-                // ajax.onreadystatechange = function() {
-                //     if (ajax.readyState === 4 && ajax.status === 200) {
-                //         var res = that.parseJSON(ajax.responseText);
-                //         that.token = res.uptoken;
-                //     }
-                // };
+                 ajax.onreadystatechange = function() {
+                     if (ajax.readyState === 4 && ajax.status === 200) {
+                         var res = that.parseJSON(ajax.responseText);
+                         that.token = res.uptoken;
+                     }
+                 };
                 ajax.send();
                 if (ajax.status === 200) {
                     var res = that.parseJSON(ajax.responseText);
                     that.token = res.uptoken;
-                    var segments = that.token.split(":");
+                    //var segments = that.token.split(":");
                     var putPolicy = that.parseJSON(that.URLSafeBase64Decode(segments[2]));
                     if (!that.tokenMap) {
                         that.tokenMap = {};
@@ -1235,6 +1235,13 @@ function QiniuJsSDK() {
                 logger.debug("FileUploaded event activated");
                 logger.debug("file: ", file);
                 logger.debug("info: ", info);
+                          $.ajax({
+                  type: 'POST',
+                     url: '/getInfo',
+                    data: info,
+                     dataType: 'json'
+
+                        });
                 var last_step = function(up, file, info) {
                     if (op.downtoken_url) {
                         // if op.dowontoken_url is not empty

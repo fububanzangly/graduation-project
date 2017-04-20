@@ -26,5 +26,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('users.urls')),
     url(r'^', include("homepage.urls")),
-    url(r'^comments/', include('django_comments.urls')),
 ]
