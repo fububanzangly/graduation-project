@@ -29,12 +29,10 @@ def token(request):
     return HttpResponse(json.dumps(uptoken))
 def getInfo(request):
     if request.is_ajax() and request.method == 'POST':
-        for key in request.POST:
-            print key
-            valuelist = request.POST.getlist(key)
-            print valuelist
-            for key in valuelist:
-                print key
-            
-            #            douban_API.douban(bookname)
+        dic_json = json.dumps(request.POST)
+        resInfo = json.loads(dic_json)
+        fileInfo =  resInfo["response"]
+        bookinfo = eval(fileInfo)
+        bookname = bookinfo["key"]
+        douban_API.douban(bookname)
     return HttpResponse("upload over!")
