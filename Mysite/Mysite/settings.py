@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for Mysite project.
 
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -114,17 +116,28 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
-USE_TZ = True
+USE_TZ = False
 
+DATETIME_FORMAT = 'Y-m-d H:i:s'
+DATE_FORMAT = 'Y-m-d'
 
+SUIT_CONFIG = {
+    'ADMIN_NAME': '电子图书馆管理系统后台管理',
+    'LIST_PER_PAGE': 20,
+    'MENU': ({'label': u'书籍管理', 'app': 'bookinfo', 'models': ('bookinfo', )},
+            {'label': u'Github图书', 'app': 'bookinfo', 'models': ('gitbook', )},
+            {'label': u'用户管理', 'app': 'users', 'models': ('User', )},
+             ),
+
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
