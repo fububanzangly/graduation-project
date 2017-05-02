@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from bookinfo import models
 # Create your views here.
-name="Docker"
+# -*- coding: utf-8 -*-
 def show(request):
-   # bookinfo = models.bookinfo.objects.all()
-    #showinfomation(name)
-    return render(request, 'show.html')
-def showinfomation(name):
-    infomation = models.bookinfo.objects.get(name=name)
-    return ( {'infomation': infomation})
+    name = request.GET.get('name')
+    bookinfo = models.bookinfo.objects.all()
+    infomation = models.bookinfo.objects.get(name= name)
+    return render(request,'show.html',{'bookinfo':bookinfo,'infomation':infomation})

@@ -171,7 +171,6 @@ USERS_SPAM_PROTECTION = False  # important!
 #  ---------------------------------------------------------
 #  Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 EMAIL_USE_TLS = False
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
@@ -179,5 +178,6 @@ EMAIL_HOST_USER = '877140717@qq.com'
 EMAIL_HOST_PASSWORD = 'fvfaizszjfcsbfeh'
 DEFAULT_FROM_EMAIL = '877140717@qq.com'
 #  ---------------------------------------------------------
+#CROS
 CORS_ORIGIN_ALLOW_ALL = False
 #  ---------------------------------------------------------

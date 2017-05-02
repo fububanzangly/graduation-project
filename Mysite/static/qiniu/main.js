@@ -13,7 +13,7 @@ $(function() {
         max_file_size: '1000mb',
         flash_swf_url: '../plupload/Moxie.swf',
         dragdrop: true,
-        chunk_size: '4mb',
+        chunk_size: '10mb',
         multi_selection: !(mOxie.Env.OS.toLowerCase()==="ios"),
         uptoken_url: '/token',
         // uptoken_func: function(){
