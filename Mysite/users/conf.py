@@ -3,15 +3,15 @@ from django.conf import settings
 
 
 class UsersAppConf(AppConf):
-    VERIFY_EMAIL = False
+    VERIFY_EMAIL = True
     CREATE_SUPERUSER = settings.DEBUG
-    SUPERUSER_EMAIL = 'superuser@djangoproject.com'
-    SUPERUSER_PASSWORD = 'django'
+    SUPERUSER_EMAIL = 'liyang'
+    SUPERUSER_PASSWORD = 'root'
     EMAIL_CONFIRMATION_TIMEOUT_DAYS = 3
     SPAM_PROTECTION = True
     REGISTRATION_OPEN = True
     AUTO_LOGIN_ON_ACTIVATION = True
-    AUTO_LOGIN_AFTER_REGISTRATION = False
+    AUTO_LOGIN_AFTER_REGISTRATION = True
     PASSWORD_MIN_LENGTH = 5
     PASSWORD_MAX_LENGTH = None
     CHECK_PASSWORD_COMPLEXITY = True

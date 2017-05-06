@@ -1,12 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render_to_response
 from bookinfo import models
 import qiniu
 import json
 # -*- coding: utf-8 -*-
-
 from django.http import JsonResponse
-# Create your views here.
-# coding=utf-8
 from django.http import HttpResponse
 import os
 import urllib2
@@ -14,8 +13,7 @@ import douban_API
 QINIU_ACCESS_KEY = 'V3Ki7ai3BF3yFhKO1KMOd_8LUmS_4bMdQbZvA93O'
 QINIU_SECRET_KEY = 'KEMTQLLjydUWIQFA3NF4Sbjsv2RVl_tvwv3aw4Kc'
 QINIU_BUCKET = 'book'
-
-
+@login_required
 
 def uploadBooks(request):
     return render(request, 'upload.html')
@@ -35,4 +33,4 @@ def getInfo(request):
         bookinfo = eval(fileInfo)
         bookname = bookinfo["key"]
         douban_API.douban(bookname)
-    return HttpResponse("upload over!")
+    return render_to_response('index.html')

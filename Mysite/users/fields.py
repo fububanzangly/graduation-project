@@ -1,3 +1,4 @@
+# coding=utf-8
 import string
 
 from django import forms
@@ -19,11 +20,11 @@ class LengthValidator(object):
     def __call__(self, value):
         if self.min_length and len(value) < self.min_length:
             raise forms.ValidationError(
-                _('Password too short (must be %s characters or more)') % self.min_length,
+                _(u'密码过短(至少为 %s 位或更多)') % self.min_length,
                 code=self.code)
         elif self.max_length and len(value) > self.max_length:
             raise forms.ValidationError(
-                _('Password too long (must be %s characters or less)') % self.max_length,
+                _(u'密码过长(最多为 %s 位或更少)') % self.max_length,
                 code=self.code)
 
 length_validator = LengthValidator()
@@ -31,7 +32,7 @@ length_validator = LengthValidator()
 
 class ComplexityValidator(object):
     code = 'complexity'
-    message = _('Weak password, %s')
+    message = _(u'密码过于简单, %s')
 
     def __init__(self):
         self.password_policy = settings.USERS_PASSWORD_POLICY

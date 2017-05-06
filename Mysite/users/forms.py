@@ -1,3 +1,4 @@
+# coding=utf-8
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
@@ -10,15 +11,15 @@ from .fields import HoneyPotField, PasswordField, UsersEmailField
 class UserCreationForm(forms.ModelForm):
 
     error_messages = {
-        'duplicate_email': _('A user with that email already exists.'),
-        'password_mismatch': _('The two password fields didn\'t match.'),
+        'duplicate_email': _(u'用户名已存在！'),
+        'password_mismatch': _(u'两次密码不相同'),
     }
 
-    email = UsersEmailField(label=_('Email Address'), max_length=255)
-    password1 = PasswordField(label=_('Password'))
+    email = UsersEmailField(label=_(u'电子邮件地址'), max_length=255)
+    password1 = PasswordField(label=_(u'密码'))
     password2 = PasswordField(
-        label=_('Password Confirmation'),
-        help_text=_('Enter the same password as above, for verification.'))
+        label=_(u'确认密码'),
+        help_text=_(u'输入和第一次密码相同的密码进行确认'))
 
     class Meta:
         model = get_user_model()
@@ -61,9 +62,10 @@ class UserCreationForm(forms.ModelForm):
 class UserChangeForm(forms.ModelForm):
 
     password = ReadOnlyPasswordHashField(label=_('Password'), help_text=_(
-        'Raw passwords are not stored, so there is no way to see '
-        'this user\'s password, but you can change the password '
-        'using <a href=\"password/\">this form</a>.'))
+        u'密码经过加密，因此不可见 ,'
+        u'但是使用 <a href=\"/accounts/password_change/\">这个</a>'
+        u'链接可以修改密码.'
+    ))
 
     class Meta:
         model = get_user_model()
@@ -91,10 +93,10 @@ class RegistrationFormTermsOfService(RegistrationForm):
 
     """
     tos = forms.BooleanField(
-        label=_('I have read and agree to the Terms of Service'),
+        label=_('我已阅读并同意注册'),
         widget=forms.CheckboxInput,
         error_messages={
-            'required': _('You must agree to the terms to register')
+            'required': _('你必须同意注册')
         })
 
 

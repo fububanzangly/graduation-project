@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>上传图书</title>
+    <title>更改图片</title>
     {% load static %}
     <link rel="stylesheet" href="/static/css/bootstrap.css">
     <link rel="stylesheet" href="/static/qiniu/css/main.css"/>
@@ -19,7 +19,7 @@
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">电子图书管理系统</a>
 				</div>
-          <a class="navbar-brand" href="#">上传图书</a>
+          <a class="navbar-brand" href="#">更改图片</a>
                 <div class="navbar-header">
                 </div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,7 +50,7 @@
 			</nav>
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
-                <a href="#demo" id="demo-tab" role="tab" data-toggle="tab" aria-controls="demo" aria-expanded="true">选择图书</a>
+                <a href="#demo" id="demo-tab" role="tab" data-toggle="tab" aria-controls="demo" aria-expanded="true">选择图片</a>
             </li>
 
             <li role="presentation">
@@ -66,14 +66,14 @@
                     <ul class="tip col-md-12 text-mute">
                         <li>
                             <small>
-                                请点击选择文件或将文件拖动到页面中（请使用PDF文件）
+                                请点击选择文件或将文件拖动到页面中（请使用jpg文件）
                             </small>
                         </li>
                         <li>
-                            <small>文件大小限制在100兆之内</small>
+                            <small>文件大小限制在2兆之内</small>
                         </li>
                         <li>
-                            <small>大于4M文件采用分块上传。</small>
+                            <small>请将文件命名为"1.jpg"，"2.jpg"，"3.jpg"分别对应三张轮转图</small>
                         </li>
                         <li>
                             <small>上传过程中请勿关闭页面，如需取消上传请单击""</small>

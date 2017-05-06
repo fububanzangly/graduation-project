@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'users',
     'show',
     'corsheaders',
-    "qiniu"
+    "qiniu",
+    'search'
 ]
 
 MIDDLEWARE = [
@@ -132,8 +133,7 @@ DATE_FORMAT = 'Y-m-d'
 SUIT_CONFIG = {
     'ADMIN_NAME': '电子图书馆管理系统后台管理',
     'LIST_PER_PAGE': 20,
-    'MENU': ({'label': u'书籍管理', 'app': 'bookinfo', 'models': ('bookinfo', )},
-            {'label': u'Github图书', 'app': 'bookinfo', 'models': ('gitbook', )},
+    'MENU': ({'label': u'书籍管理', 'app': 'bookinfo', 'models': ('bookinfo','gitbook',)},
             {'label': u'用户管理', 'app': 'users', 'models': ('User', )},
              ),
 
@@ -181,3 +181,6 @@ DEFAULT_FROM_EMAIL = '877140717@qq.com'
 #CROS
 CORS_ORIGIN_ALLOW_ALL = False
 #  ---------------------------------------------------------
+#login
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/'
