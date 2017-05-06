@@ -11,12 +11,12 @@ def homepage(request):
         bookrecommend = models.bookinfo.objects.filter(isrecommend=1)
         recommend1 = models.bookinfo.objects.get(id=1)
         recommend2 = models.bookinfo.objects.get(id=2)
-       # recommend3 = models.bookinfo.objects.get(id=3)
+        recommend3 = models.bookinfo.objects.get(id=3)
         return render(request,'index.html',{'bookinfo':bookinfo,
                                             'bookrecommend':bookrecommend,
                                             'recommend1':recommend1,
                                             'recommend2':recommend2,
-                                          #  'recommend3': recommend3,
+                                            'recommend3': recommend3,
                                             })
 @login_required
 def changpicture(request):

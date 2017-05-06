@@ -20,6 +20,7 @@ from django.conf.urls import include
 from django.views.static import serve
 from django.conf import settings
 urlpatterns = [
+    url(r'^', include('search.urls')),
     url(r'^', include('show.urls')),
     url(r'^',include('upload.urls')),
     url(r'^github/',include('github.urls')),
