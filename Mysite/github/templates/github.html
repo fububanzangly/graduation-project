@@ -16,7 +16,7 @@
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">电子图书管理系统</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">电子图书管理系统</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
@@ -61,51 +61,29 @@
 	</div>
 	</div>
 
-<div class="container">
+
+
+    <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<h3 class="text-center text-info">
-				搜索结果
-			</h3>
-			<p class="text-left lead text-warning">由于图书馆处于发展期间，图书量并不庞大，因此部分书籍可能尚未录入，请您理解！</p>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							书名
-						</th>
-						<th>
-							作者
-						</th>
-						<th>
-							出版时间
-						</th>
-						<th>
-							现在阅读
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for line in result %}
-					<tr class="success">
-						<td>
-							{{line.name}}
-						</td>
-						<td>
-							{{line.author}}
-						</td>
-						<td>
-							{{line.type}}
-						</td>
-						<td>
-							<a href="/show/?name={{line.name}}">阅读</a>
-						</td>
-						{% endfor %}
-					</tr>
-				</tbody>
-			</table>
+			<form role="form" action="" method="GET">
+
+				<div class="form-group">
+					 GitHub地址
+                    <input type="text" class="form-control" id="address" name="address" placeholder="请输入Github地址"/>
+				</div>
+
+
+		<div class="col-md-12 column">
+			 <button type="submit" class="btn btn-block btn-lg btn-info">提交</button>
+		</div>
+
+			</form>
 		</div>
 	</div>
-</div>
-</body>
+
+
+
+
+    </body>
 </html>

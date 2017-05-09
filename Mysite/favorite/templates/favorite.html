@@ -26,7 +26,7 @@
 						</div> <button type="submit" class="btn btn-default" >搜索</button>
 					</form>
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							 <a href="/" class="dropdown-toggle" data-toggle="dropdown">
                                  {% if request.user.is_authenticated %}
                                 {{request.user}}
                                 {% else %}
@@ -39,7 +39,7 @@
 
 
                                     {% if request.user.is_authenticated %}
-                                <a href="/showpage/">个人中心</a>
+                                <a href="/favorite/">个人中心</a>
                                 {% else %}
                                     <a href="/accounts/login/">登录</a>
                                 {% endif %}
@@ -57,53 +57,53 @@
 					</ul>
 				</div>
 			</nav>
-		</div>
-	</div>
-	</div>
 
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<h3 class="text-center text-info">
-				搜索结果
-			</h3>
-			<p class="text-left lead text-warning">由于图书馆处于发展期间，图书量并不庞大，因此部分书籍可能尚未录入，请您理解！</p>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							书名
-						</th>
-						<th>
-							作者
-						</th>
-						<th>
-							出版时间
-						</th>
-						<th>
-							现在阅读
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for line in result %}
-					<tr class="success">
-						<td>
-							{{line.name}}
-						</td>
-						<td>
-							{{line.author}}
-						</td>
-						<td>
-							{{line.type}}
-						</td>
-						<td>
-							<a href="/show/?name={{line.name}}">阅读</a>
-						</td>
-						{% endfor %}
-					</tr>
-				</tbody>
-			</table>
+			<div class="row clearfix">
+				<div class="col-md-8 column">
+					<div class="btn-group btn-group-lg">
+                       <a href="/accounts/password_change/"> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-left"></em> 修改密码</button></a>
+                       <a href="/accounts/logout/"> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-justify"></em> 注销</button></a>
+					</div><br><br><br>
+					<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="alert alert-dismissable alert-info">
+				<h4>
+					你好， {{request.user}}
+				</h4> <strong>这是您的收藏内容。</strong>
+			</div>
+		</div>
+	</div>
+</div>
+					{% for line in favoritebook %}
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								 {{ line.name }}
+							</h3 ><br>
+							<h4 class="panel-title">作者</h4> {{ line.author }}
+							<h4 class="panel-title">类别</h4> {{ line.type }}
+							<div class="row clearfix">
+							<h2 >&nbsp;&nbsp;&nbsp;<a href="/show/?name={{line.name}}">阅读</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</h2>
+									<form  method="get"  action="/delfavorite/">
+									<button type="submit" class="btn btn-danger btn-lg" name="bookID" value="{{ line.id}}">删除收藏</button>
+									</form>
+							</div>
+
+
+
+						</div>
+					</div >
+					{% endfor %}
+				</div>
+				<div class="col-md-4 column">
+
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

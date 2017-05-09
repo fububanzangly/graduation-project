@@ -1,5 +1,5 @@
 from django.conf.urls import url
 from . import views
 urlpatterns = [
-    url(r'uploadBooks',views.uploadGitBook)
+    url(r'^github/',views.uploadGitBook)
 ]

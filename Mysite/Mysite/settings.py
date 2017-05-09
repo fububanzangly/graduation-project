@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'show',
     'corsheaders',
     "qiniu",
-    'search'
+    'search',
+    'favorite'
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,7 @@ SUIT_CONFIG = {
     'LIST_PER_PAGE': 20,
     'MENU': ({'label': u'书籍管理', 'app': 'bookinfo', 'models': ('bookinfo','gitbook',)},
             {'label': u'用户管理', 'app': 'users', 'models': ('User', )},
+            {'label': u'轮转图管理', 'app': 'homepage', 'models': ('pic', )},
              ),
 
 }

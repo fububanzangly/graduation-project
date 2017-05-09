@@ -12,12 +12,18 @@ def homepage(request):
         recommend1 = models.bookinfo.objects.get(id=1)
         recommend2 = models.bookinfo.objects.get(id=2)
         recommend3 = models.bookinfo.objects.get(id=3)
+        pic = getPicture
         return render(request,'index.html',{'bookinfo':bookinfo,
                                             'bookrecommend':bookrecommend,
                                             'recommend1':recommend1,
                                             'recommend2':recommend2,
                                             'recommend3': recommend3,
+                                            'pic': pic,
                                             })
 @login_required
 def changpicture(request):
         return render(request, 'changepic.html')
+def getPicture():
+    from models import pic
+    pic = pic.objects.all()
+    return pic

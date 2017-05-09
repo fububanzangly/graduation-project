@@ -22,8 +22,9 @@ from django.conf import settings
 urlpatterns = [
     url(r'^', include('search.urls')),
     url(r'^', include('show.urls')),
+    url(r'^', include('favorite.urls')),
     url(r'^',include('upload.urls')),
-    url(r'^github/',include('github.urls')),
+    url(r'^',include('github.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('users.urls')),
     url(r'^', include("homepage.urls")),
