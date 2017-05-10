@@ -10,9 +10,9 @@ def homepage(request):
         bookinfo = models.bookinfo.objects.filter(isshow=1).order_by('-id')
         github = models.gitbook.objects.filter(isshow=1).order_by('-id')
         bookrecommend = models.bookinfo.objects.filter(isrecommend=1)
-        recommend1 = models.bookinfo.objects.get(id=1)
-        recommend2 = models.bookinfo.objects.get(id=2)
-        recommend3 = models.bookinfo.objects.get(id=3)
+        recommend1 = models.bookinfo.objects.get(id=11)
+        recommend2 = models.bookinfo.objects.get(id=12)
+        recommend3 = models.bookinfo.objects.get(id=13)
         pic = getPicture
         return render(request,'index.html',{'bookinfo':bookinfo,
                                             'bookrecommend':bookrecommend,
