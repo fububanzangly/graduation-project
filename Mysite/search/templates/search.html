@@ -78,7 +78,7 @@
 							作者
 						</th>
 						<th>
-							出版时间
+							类型
 						</th>
 						<th>
 							现在阅读
@@ -99,6 +99,24 @@
 						</td>
 						<td>
 							<a href="/show/?name={{line.name}}">阅读</a>
+						</td>
+						{% endfor %}
+					</tr>
+				</tbody>
+					<tbody>
+					{% for line in gitresult %}
+					<tr class="warning">
+						<td>
+							{{line.name}}
+						</td>
+						<td>
+							{{line.author}}
+						</td>
+						<td>
+							Github项目
+						</td>
+						<td>
+							<a href="/showgithub/?name={{line.name}}">查看项目</a>
 						</td>
 						{% endfor %}
 					</tr>

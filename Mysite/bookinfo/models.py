@@ -34,7 +34,7 @@ class gitbook(models.Model):
         (1, u'推荐'),
         (2, u'不推荐'),
     )
-    url = models.CharField(u'链接地址',max_length=50,null=False)
+    name = models.CharField(u'项目名',max_length=50,default="noname")
     author = models.CharField(u'作者',max_length=20)
     path = models.CharField(u'路径',max_length=100,default="/")
     isshow = models.IntegerField(u'允许显示', choices=is_show, default=2)

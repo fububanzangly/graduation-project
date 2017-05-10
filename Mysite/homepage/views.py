@@ -8,6 +8,7 @@ import os
 def homepage(request):
         from bookinfo import models
         bookinfo = models.bookinfo.objects.filter(isshow=1).order_by('-id')
+        github = models.gitbook.objects.filter(isshow=1).order_by('-id')
         bookrecommend = models.bookinfo.objects.filter(isrecommend=1)
         recommend1 = models.bookinfo.objects.get(id=1)
         recommend2 = models.bookinfo.objects.get(id=2)
@@ -19,6 +20,7 @@ def homepage(request):
                                             'recommend2':recommend2,
                                             'recommend3': recommend3,
                                             'pic': pic,
+                                            'github': github,
                                             })
 @login_required
 def changpicture(request):

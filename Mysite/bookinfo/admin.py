@@ -7,9 +7,9 @@ class bookinfoAdmin(admin.ModelAdmin):
     search_fields = ('name', 'author', 'type', 'ISBN')
     list_filter = ('author', 'type',)
 class gitbookAdmin(admin.ModelAdmin):
-    list_display = ('url', 'author')
-    search_fields = ('url', 'author')
-    list_filter = ('url', 'author')
+    list_display = ('name', 'author')
+    search_fields = ('name', 'author')
+    list_filter = ('name', 'author')
 
 
 

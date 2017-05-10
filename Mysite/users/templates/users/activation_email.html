@@ -1,10 +1,10 @@
 {% load i18n %}
 
-{% trans "Thank you for registering an account at" %} {{ site.name }}
-{% trans "To activate your registration, please visit the following page:" %}
+{% trans "欢迎您在本网站注册用户" %} {{ site.name }}
+{% trans "请点击下面的链接激活您的账户:" %}
 
 {{ protocol }}://{{ site.domain }}{% url 'users_activate' uid token %}
 
-{% blocktrans %}This link will expire in {{ expiration_days }} days.{% endblocktrans %}
+{% blocktrans %}这个链接的有效期为 {{ expiration_days }} 天。{% endblocktrans %}
 
-{% trans "If you didn't register this account you can simply delete this email and we won't bother you again." %}
+{% trans "如果您未在本站注册，请删除邮件。" %}
