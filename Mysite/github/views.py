@@ -13,12 +13,12 @@ def uploadGitBook (request):
     path = "./static/upload/"+name+".zip"
     os.environ['zipAddress'] = str(zipAddress)
     os.environ['mdAddress'] = str(mdAddress)
-    os.chdir("./static/upload")
+    os.chdir("/Users/liyang/Documents/Python/graduation-project/Mysite/static/upload")
     os.system("wget $zipAddress")
     os.system("wget $mdAddress")
     os.renames("README.md",name+".md")
     os.renames("master.zip", name + ".zip")
-    models.gitbook.objects.create(name=name,author=author,path=path)
+    models.gitbook.objects.create(name=name,author=author,path=path,realpath=address)
     return render(request, 'success.html')
 def GitBook (request):
     return render(request, 'github.html')

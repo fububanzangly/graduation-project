@@ -35,6 +35,7 @@ class gitbook(models.Model):
         (2, u'不推荐'),
     )
     name = models.CharField(u'项目名',max_length=50,default="noname")
+    realpath = models.CharField(u'项目原始地址', max_length=50, default="unknow")
     author = models.CharField(u'作者',max_length=20)
     path = models.CharField(u'路径',max_length=100,default="/")
     isshow = models.IntegerField(u'允许显示', choices=is_show, default=2)
