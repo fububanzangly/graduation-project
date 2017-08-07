@@ -4,6 +4,10 @@ from django.shortcuts import render_to_response
 from bookinfo import models
 import qiniu
 import json
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 # -*- coding: utf-8 -*-
 from django.http import JsonResponse
 from django.http import HttpResponse

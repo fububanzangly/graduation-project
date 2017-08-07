@@ -691,7 +691,7 @@ function QiniuJsSDK() {
                 if (ajax.status === 200) {
                     var res = that.parseJSON(ajax.responseText);
                     that.token = res.uptoken;
-                    //var segments = that.token.split(":");
+                    var segments = that.token.split(":");
                     var putPolicy = that.parseJSON(that.URLSafeBase64Decode(segments[2]));
                     if (!that.tokenMap) {
                         that.tokenMap = {};
