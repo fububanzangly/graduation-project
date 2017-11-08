@@ -6,6 +6,7 @@ def show(request):
     name = request.GET.get('name')
     bookinfo = models.bookinfo.objects.filter(isshow=1).order_by('-id')
     infomation = models.bookinfo.objects.get(name= name)
+    print bookinfo
     return render(request,'show.html',{'bookinfo':bookinfo,'infomation':infomation})
 def showgithub(request):
     name = request.GET.get('name')

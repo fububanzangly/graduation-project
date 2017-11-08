@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'homepage',
     'users',
     'show',
-    'corsheaders',
+    #'corsheaders',
     "qiniu",
     'search',
     'favorite'
@@ -181,7 +181,7 @@ EMAIL_HOST_PASSWORD = 'fvfaizszjfcsbfeh'
 DEFAULT_FROM_EMAIL = '877140717@qq.com'
 #  ---------------------------------------------------------
 #CROS
-CORS_ORIGIN_ALLOW_ALL = False
+#CORS_ORIGIN_ALLOW_ALL = False
 #  ---------------------------------------------------------
 #login
 LOGIN_URL = '/accounts/login/'
