@@ -31,7 +31,7 @@ prompt-toolkit==2.0.8
 py2app==0.7.3
 pycparser==2.19
 pyExcelerator==0.6.4.1
-Pygments==2.3.1
+Pygments==2.7.4
 PyMySQL==0.9.3
 pyobjc-core==2.5.1
 pyobjc-framework-Accounts==2.5.1
