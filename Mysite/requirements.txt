@@ -80,7 +80,7 @@ sqlparse==0.2.4
 suit==2.0.2
 tabulate==0.8.3
 terminaltables==3.1.0
-urllib3==1.22
+urllib3==1.26.5
 users==1.0.dev0
 #vboxapi==1.0
 wcwidth==0.1.7
